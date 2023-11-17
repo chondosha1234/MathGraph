@@ -1,31 +1,82 @@
 package com.chondosha.mathgraph.logic;
 
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineManager;
-import javax.script.ScriptException;
+import java.util.regex.*;
 
 public class FunctionParser {
 
     public static double parseFunction(String expression, double x) {
 
-        ScriptEngineManager manager = new ScriptEngineManager();
-        ScriptEngine engine = manager.getEngineByName("Javascript");
+        String substitutedExpression = expression.replaceAll("x", String.valueOf(x));
 
-        try {
-            // replace the character x with the double value given to function
-            String substitutedExpression = expression.replaceAll("x", Double.toString(x));
+        String[] tokens = tokenize(substitutedExpression);
 
-            // use script engine to evaluate expression
-            Object result = engine.eval(substitutedExpression);
+        return evaluate(tokens);
+    }
 
-            // turn into double and return
-            return Double.parseDouble(result.toString());
+    private static String[] tokenize(String expression) {
+        // split expression into tokens based on operators
+        return expression.split("(?<=[-+*/^()])|(?=[-+*/^()])");
+    }
 
-        } catch (ScriptException e) {
+    private static double evaluate(String[] tokens) {
+        // start parsing process from first token
+        return parseExpression(tokens, 0);
+    }
 
-            e.printStackTrace();
-            // return NaN for invalid expression
-            return Double.NaN;
+    private static double parseExpression(String[] tokens, int index) {
+        double leftValue = parseTerm(tokens, index++);
+
+        while (index < tokens.length && (tokens[index].equals("+") || tokens[index].equals("-"))) {
+            // get the current operator (plus or minus at this level)
+            String operator = tokens[index++];
+            // get the second value on other side of operator (may require multiple recursive calls)
+            double rightValue = parseTerm(tokens, index);
+
+            if (operator.equals("+")) {
+                leftValue += rightValue;
+            } else {
+                leftValue -= rightValue;
+            }
         }
+        return leftValue;
+    }
+
+    private static double parseTerm(String[] tokens, int index) {
+        double leftValue = parseFactor(tokens, index);
+
+        while (index < tokens.length && (tokens[index].equals("*") || tokens[index].equals("/"))) {
+            String operator = tokens[index++];
+            double rightValue = parseFactor(tokens, index);
+
+            if (operator.equals("*")) {
+                leftValue *= rightValue;
+            } else {
+                leftValue /= rightValue;  // todo: think about proper division
+            }
+        }
+        return leftValue;
+    }
+
+    private static double parseFactor(String[] tokens, int index) {
+        if (tokens[index].equals("(")) {
+            index++;  // move past left parentheses
+
+            // deal with whole expression inside parentheses
+            double result = parseExpression(tokens, index);
+
+            index++; // move past right parentheses
+
+            return result;
+
+        } else if (tokens[index].equals("^")) {
+            index++;  // move past ^ sign
+            double base = parseFactor(tokens, index);
+            double exponent = parseFactor(tokens, index);
+            return Math.pow(base, exponent);
+        } else {
+            // parse numbers or constants
+            return Double.parseDouble(tokens[index++]);
+        }
+
     }
 }
