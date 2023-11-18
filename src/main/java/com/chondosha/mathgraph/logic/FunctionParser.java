@@ -30,7 +30,7 @@ public class FunctionParser {
             // get the current operator (plus or minus at this level)
             String operator = tokens[index++];
             // get the second value on other side of operator (may require multiple recursive calls)
-            double rightValue = parseTerm(tokens, index);
+            double rightValue = parseTerm(tokens, index++);
 
             if (operator.equals("+")) {
                 leftValue += rightValue;
@@ -42,11 +42,11 @@ public class FunctionParser {
     }
 
     private static double parseTerm(String[] tokens, int index) {
-        double leftValue = parseFactor(tokens, index);
+        double leftValue = parseFactor(tokens, index++);
 
         while (index < tokens.length && (tokens[index].equals("*") || tokens[index].equals("/"))) {
             String operator = tokens[index++];
-            double rightValue = parseFactor(tokens, index);
+            double rightValue = parseFactor(tokens, index++);
 
             if (operator.equals("*")) {
                 leftValue *= rightValue;
@@ -75,8 +75,25 @@ public class FunctionParser {
             return Math.pow(base, exponent);
         } else {
             // parse numbers or constants
-            return Double.parseDouble(tokens[index++]);
+            return Double.parseDouble(tokens[index]);
         }
 
+    }
+
+    /**
+     * Counts the number of terms in the parentheses, recursively in the case that there are multiple
+     * open brackets.  This will help jump to the correct index in parseTerm and parseExpression whenever
+     * an inner expression is evaluated and returned to a higher level
+     */
+    public static int countTermsInParentheses(String[] tokens, int index) {
+        while (index < tokens.length && !tokens[index].equals(")")) {
+            if (tokens[index].equals("(")) {
+                index++;
+                index += countTermsInParentheses(tokens, index);
+            } else {
+                index++;
+            }
+        }
+        return index;
     }
 }

@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bc310e57-8a92-4221-8c84-36bc345da590" name="Changes" comment="added function parser method">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/chondosha/mathgraph/FunctionParserTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="bc310e57-8a92-4221-8c84-36bc345da590" name="Changes" comment="changed function parser, and added basic test that passes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/chondosha/mathgraph/logic/FunctionParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chondosha/mathgraph/logic/FunctionParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chondosha/mathgraph/tests/FunctionParserTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/chondosha/mathgraph/FunctionParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/chondosha/mathgraph/FunctionParserTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,21 +76,8 @@
       <recent name="com.chondosha.mathgraph.test" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.FunctionParserTest.parseFunctionTest">
-    <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.chondosha.mathgraph.HelloApplication" />
-      <module name="MathGraph.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.chondosha.mathgraph.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FunctionParserTest.parseFunctionTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.FunctionParserTest.countTermsInParenthesesTest">
+    <configuration name="FunctionParserTest.countTermsInParenthesesTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -108,7 +90,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.chondosha.mathgraph.FunctionParserTest.parseFunctionTest&quot;" />
+            <option value="&quot;com.chondosha.mathgraph.FunctionParserTest.countTermsInParenthesesTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -119,50 +101,109 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="MathGraph [test]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="FunctionParserTest.parseFunctionDivideTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value="test" />
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.chondosha.mathgraph.FunctionParserTest.parseFunctionDivideTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
+      <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="FunctionParserTest.parseFunctionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="MathGraph.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.chondosha.mathgraph.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.chondosha.mathgraph" />
-      <option name="MAIN_CLASS_NAME" value="com.chondosha.mathgraph.FunctionParserTest" />
-      <option name="METHOD_NAME" value="parseFunctionTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="FunctionParserTest.parseFunctionMultiplyTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.chondosha.mathgraph.FunctionParserTest.parseFunctionMultiplyTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="FunctionParserTest.parseFunctionParenthesesTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.chondosha.mathgraph.FunctionParserTest.parseFunctionParenthesesTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="FunctionParserTest.parseFunctionPowerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.chondosha.mathgraph.FunctionParserTest.parseFunctionPowerTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.FunctionParserTest.parseFunctionTest" />
-        <item itemvalue="JUnit.FunctionParserTest.parseFunctionTest" />
-        <item itemvalue="Gradle.MathGraph [test]" />
-        <item itemvalue="Application.HelloApplication" />
+        <item itemvalue="Gradle.FunctionParserTest.countTermsInParenthesesTest" />
+        <item itemvalue="Gradle.FunctionParserTest.parseFunctionParenthesesTest" />
+        <item itemvalue="Gradle.FunctionParserTest.parseFunctionPowerTest" />
+        <item itemvalue="Gradle.FunctionParserTest.parseFunctionDivideTest" />
+        <item itemvalue="Gradle.FunctionParserTest.parseFunctionMultiplyTest" />
       </list>
     </recent_temporary>
   </component>
@@ -191,7 +232,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699994982209</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="changed function parser, and added basic test that passes">
+      <option name="closed" value="true" />
+      <created>1700190445696</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1700190445696</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -208,6 +257,22 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
     <MESSAGE value="added function parser method" />
-    <option name="LAST_COMMIT_MESSAGE" value="added function parser method" />
+    <MESSAGE value="changed function parser, and added basic test that passes" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed function parser, and added basic test that passes" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/chondosha/mathgraph/logic/FunctionParser.java</url>
+          <line>82</line>
+          <properties class="com.chondosha.mathgraph.logic.FunctionParser" method="countTermsInParentheses">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
