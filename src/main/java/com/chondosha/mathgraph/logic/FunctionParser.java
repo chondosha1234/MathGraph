@@ -1,5 +1,6 @@
 package com.chondosha.mathgraph.logic;
 
+import java.util.ArrayList;
 import java.util.regex.*;
 
 public class FunctionParser {
@@ -15,7 +16,24 @@ public class FunctionParser {
 
     private static String[] tokenize(String expression) {
         // split expression into tokens based on operators
-        return expression.split("(?<=[-+*/^()])|(?=[-+*/^()])");
+        String[] tokens = expression.split("(?<=[-+*/^()])|(?=[-+*/^()])");
+        tokens = cleanArray(tokens);
+        return tokens;
+    }
+
+    /**
+     * Method to go through array of tokens and remove empty space strings that may be in it
+     * Some users may type like this 3+(2*x)  and others like this 3 + ( 2 * x )  the second will create " " tokens
+     */
+    private static String[] cleanArray(String[] tokens) {
+
+        ArrayList<String> cleanedList = new ArrayList<>();
+        for (String token : tokens) {
+            if (!token.equals(" ")) {
+                cleanedList.add(token);
+            }
+        }
+        return cleanedList.toArray(new String[cleanedList.size()]);
     }
 
     private static double evaluate(String[] tokens) {
@@ -24,7 +42,13 @@ public class FunctionParser {
     }
 
     private static double parseExpression(String[] tokens, int index) {
-        double leftValue = parseTerm(tokens, index++);
+        double leftValue = parseTerm(tokens, index);
+
+        if (tokens[index].equals("(")) {
+            index += countTermsInParentheses(tokens, index) + 1;
+        } else {
+            index++;
+        }
 
         while (index < tokens.length && (tokens[index].equals("+") || tokens[index].equals("-"))) {
             // get the current operator (plus or minus at this level)
@@ -42,7 +66,13 @@ public class FunctionParser {
     }
 
     private static double parseTerm(String[] tokens, int index) {
-        double leftValue = parseFactor(tokens, index++);
+        double leftValue = parseFactor(tokens, index);
+
+        if (tokens[index].equals("(")) {
+            index += countTermsInParentheses(tokens, index) + 1;
+        } else {
+            index++;
+        }
 
         while (index < tokens.length && (tokens[index].equals("*") || tokens[index].equals("/"))) {
             String operator = tokens[index++];
@@ -58,6 +88,7 @@ public class FunctionParser {
     }
 
     private static double parseFactor(String[] tokens, int index) {
+
         if (tokens[index].equals("(")) {
             index++;  // move past left parentheses
 
@@ -86,6 +117,8 @@ public class FunctionParser {
      * an inner expression is evaluated and returned to a higher level
      */
     public static int countTermsInParentheses(String[] tokens, int index) {
+        int startIndex = index;
+        index++;
         while (index < tokens.length && !tokens[index].equals(")")) {
             if (tokens[index].equals("(")) {
                 index++;
@@ -94,6 +127,6 @@ public class FunctionParser {
                 index++;
             }
         }
-        return index;
+        return index - startIndex;
     }
 }

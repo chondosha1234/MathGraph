@@ -93,9 +93,23 @@ public class FunctionParserTest {
 
     @Test
     void countTermsInParenthesesTest() {
+
+        // basic counting the tokens in parentheses
         String[] tokens = new String[] {"(", "2", "+", "2", ")"};
         int index = 0;
         index = countTermsInParentheses(tokens, index);
-        assertEquals(5, index);
+        assertEquals(4, index);
+
+        // tests to make sure it doesn't count the terms outside of parentheses
+        tokens = new String[] {"(", "2", "+", "2", ")", "+", "5"};
+        index = 0;
+        index = countTermsInParentheses(tokens, index);
+        assertEquals(4, index);
+
+        // test nested parentheses
+        tokens = new String[] {"(", "(", "2", "+", "2", ")", "+", "2", ")"};
+        index = 0;
+        index = countTermsInParentheses(tokens, index);
+        assertEquals(8, index);
     }
 }
