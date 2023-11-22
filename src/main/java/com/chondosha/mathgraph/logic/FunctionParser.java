@@ -14,6 +14,16 @@ public class FunctionParser {
         return evaluate(tokens);
     }
 
+    // todo: implement 3d parse
+    public static double parseFunction(String expression, double x, double y) {
+
+        String substitutedExpression = expression.replaceAll("x", String.valueOf(x));
+
+        String[] tokens = tokenize(substitutedExpression);
+
+        return evaluate(tokens);
+    }
+
     private static String[] tokenize(String expression) {
         // split expression into tokens based on operators
         String[] tokens = expression.split("(?<=[-+*/^()])|(?=[-+*/^()])");
@@ -28,9 +38,18 @@ public class FunctionParser {
     private static String[] cleanArray(String[] tokens) {
 
         ArrayList<String> cleanedList = new ArrayList<>();
-        for (String token : tokens) {
-            if (!token.equals(" ")) {
-                cleanedList.add(token);
+        for (int i = 0; i < tokens.length; i++) {
+
+            if (tokens[i].equals("-")) {
+                // check to see if "-" sign is for negative value or subtraction
+                if (i < 1 || "+-*/^".contains(tokens[i-1])) {
+                    cleanedList.add(tokens[i] + tokens[i+1]);
+                    i++;
+                }
+
+            } else if (!tokens[i].equals(" ")) {
+                // clean out any empty space tokens
+                cleanedList.add(tokens[i]);
             }
         }
         return cleanedList.toArray(new String[cleanedList.size()]);
