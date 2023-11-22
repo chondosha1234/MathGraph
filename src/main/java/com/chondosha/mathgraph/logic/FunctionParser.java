@@ -95,14 +95,14 @@ public class FunctionParser {
             // deal with whole expression inside parentheses
             double result = parseExpression(tokens, index);
 
-            index++; // move past right parentheses
+            //index++; // move past right parentheses
 
             return result;
 
-        } else if (tokens[index].equals("^")) {
-            index++;  // move past ^ sign
-            double base = parseFactor(tokens, index);
-            double exponent = parseFactor(tokens, index);
+        } else if (index+2 < tokens.length && tokens[index+1].equals("^")) {
+            // if the next symbol is exponent, it should immediately evaluate the term after carrot as the power and return evaluated term
+            double base = Double.parseDouble(tokens[index]);
+            double exponent = parseExpression(tokens, index+2);
             return Math.pow(base, exponent);
         } else {
             // parse numbers or constants

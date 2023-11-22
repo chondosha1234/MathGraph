@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bc310e57-8a92-4221-8c84-36bc345da590" name="Changes" comment="added more tests for function parser">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/chondosha/mathgraph/logic/FunctionParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chondosha/mathgraph/logic/FunctionParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/chondosha/mathgraph/FunctionParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/chondosha/mathgraph/FunctionParserTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="bc310e57-8a92-4221-8c84-36bc345da590" name="Changes" comment="fixed some parenthese logic and got most tests running except exponent" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -76,7 +72,7 @@
       <recent name="com.chondosha.mathgraph.test" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.FunctionParserTest.parseFunctionParenthesesTest">
+  <component name="RunManager" selected="Gradle.FunctionParserTest.parseFunctionPowerTest">
     <configuration name="FunctionParserTest.countTermsInParenthesesTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -199,9 +195,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.FunctionParserTest.parseFunctionPowerTest" />
         <item itemvalue="Gradle.FunctionParserTest.parseFunctionParenthesesTest" />
         <item itemvalue="Gradle.FunctionParserTest.countTermsInParenthesesTest" />
-        <item itemvalue="Gradle.FunctionParserTest.parseFunctionPowerTest" />
         <item itemvalue="Gradle.FunctionParserTest.parseFunctionDivideTest" />
         <item itemvalue="Gradle.FunctionParserTest.parseFunctionMultiplyTest" />
       </list>
@@ -248,7 +244,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700280763630</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="fixed some parenthese logic and got most tests running except exponent">
+      <option name="closed" value="true" />
+      <created>1700622572530</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1700622572530</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -267,17 +271,7 @@
     <MESSAGE value="added function parser method" />
     <MESSAGE value="changed function parser, and added basic test that passes" />
     <MESSAGE value="added more tests for function parser" />
-    <option name="LAST_COMMIT_MESSAGE" value="added more tests for function parser" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/chondosha/mathgraph/FunctionParserTest.java</url>
-          <line>89</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="fixed some parenthese logic and got most tests running except exponent" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed some parenthese logic and got most tests running except exponent" />
   </component>
 </project>
