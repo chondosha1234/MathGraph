@@ -19,8 +19,8 @@ public class MainFrame extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(com.chondosha.mathgraph.HelloApplication.class.getResource("hello-view.fxml"));
-
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/chondosha/mathgraph/mainframe-view.fxml"));
+        /*
         // create main pane
         BorderPane mainPane = new BorderPane();
 
@@ -48,8 +48,8 @@ public class MainFrame extends Application {
         functionInputPanel.setSpacing(10);
         functionInputPanel.setPadding(new Insets(10));
         mainPane.setBottom(functionInputPanel);
-
-        Scene scene = new Scene(mainPane, 800, 800);
+           */
+        Scene scene = new Scene(fxmlLoader.load(), 800, 600);
         stage.setTitle("Graphing");
         stage.setScene(scene);
         stage.show();

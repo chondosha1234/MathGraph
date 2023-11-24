@@ -5,6 +5,6 @@ module com.chondosha.mathgraph {
     requires org.junit.jupiter.api;
 
 
-    opens com.chondosha.mathgraph to javafx.fxml;
-    exports com.chondosha.mathgraph;
+    opens com.chondosha.mathgraph.gui to javafx.fxml;
+    exports com.chondosha.mathgraph.gui;
 }
