@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bc310e57-8a92-4221-8c84-36bc345da590" name="Changes" comment="added dealing with negative numbers to cleanArray method, needs further testing">
+    <list default="true" id="bc310e57-8a92-4221-8c84-36bc345da590" name="Changes" comment="added some more tests for exponent">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/chondosha/mathgraph/FunctionParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/chondosha/mathgraph/FunctionParserTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/chondosha/mathgraph/gui/GraphPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chondosha/mathgraph/gui/GraphPanel2D.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -279,7 +279,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700632894320</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="added some more tests for exponent">
+      <option name="closed" value="true" />
+      <created>1700785319134</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1700785319135</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -302,7 +310,8 @@
     <MESSAGE value="basic exponent test passed" />
     <MESSAGE value="created evaluator class and test" />
     <MESSAGE value="added dealing with negative numbers to cleanArray method, needs further testing" />
-    <option name="LAST_COMMIT_MESSAGE" value="added dealing with negative numbers to cleanArray method, needs further testing" />
+    <MESSAGE value="added some more tests for exponent" />
+    <option name="LAST_COMMIT_MESSAGE" value="added some more tests for exponent" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
