@@ -76,7 +76,16 @@ public class FunctionParserTest {
         double functionValue = parseFunction(expression, x);
         assertEquals(functionValue, 16.0);
 
+        expression = "3 + 2^(x + 2)";
+        x = 2.0;
+        functionValue = parseFunction(expression, x);
+        assertEquals(functionValue, 19.0);
+
         // add test of roots  1/2 powers etc.
+        expression = "4^(x)";
+        x = 0.5;  // sqrt
+        functionValue = parseFunction(expression, x);
+        assertEquals(functionValue, 2.0);
     }
 
     @Test
@@ -111,5 +120,10 @@ public class FunctionParserTest {
         index = 0;
         index = countTermsInParentheses(tokens, index);
         assertEquals(8, index);
+    }
+
+    @Test
+    void cleanArrayTest() {
+
     }
 }
