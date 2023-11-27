@@ -49,7 +49,7 @@ public class MainFrame extends Application {
         functionInputPanel.setPadding(new Insets(10));
         mainPane.setBottom(functionInputPanel);
            */
-        Scene scene = new Scene(fxmlLoader.load(), 800, 600);
+        Scene scene = new Scene(fxmlLoader.load(), 800, 700);
         stage.setTitle("Graphing");
         stage.setScene(scene);
         stage.show();

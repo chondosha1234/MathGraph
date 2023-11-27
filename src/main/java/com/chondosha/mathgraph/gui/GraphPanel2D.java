@@ -9,19 +9,22 @@ import java.util.List;
 
 public class GraphPanel2D {
 
-    public static void render2DGraph(Canvas canvas, List<Point3D> points) {
+    public static void render2DGraph(MainFrameController controller, Canvas canvas, List<Point3D> points) {
 
         GraphicsContext gc = canvas.getGraphicsContext2D();
 
         // clear canvas
         gc.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
 
+        controller.drawCoordinatePlane();
+
+
         // set up coordinate system
         double xAxisStart = 0;
         double xAxisEnd = canvas.getWidth();
         double yAxisStart = 0;
         double yAxisEnd = canvas.getHeight();
-
+        /*
         // draw x axis
         gc.setStroke(Color.BLACK);
         gc.setLineWidth(1);
@@ -29,6 +32,7 @@ public class GraphPanel2D {
 
         // draw y axis
         gc.strokeLine(xAxisEnd/2, yAxisStart, xAxisEnd/2, yAxisEnd);
+        */
 
         gc.setStroke(Color.RED);
         gc.setLineWidth(2);

@@ -3,14 +3,11 @@ package com.chondosha.mathgraph;
 import javafx.geometry.Point3D;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import static com.chondosha.mathgraph.logic.Evaluator.evaluateFunction2D;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
-import static com.chondosha.mathgraph.logic.FunctionParser.parseFunction;
 
 public class EvaluatorTest {
 
